@@ -6,523 +6,575 @@
 <title>WUSHU — Move by Move</title>
 
 <style>
-:root{
-  --bg:#080808;--panel:#111;--panel2:#181818;
-  --text:#f4f1e9;--muted:#929292;
-  --red:#d84432;--gold:#c8a45d;--line:#292929;
-  --radius:20px;--max:1180px
+:root {
+  --bg: #080808;
+  --panel: #111;
+  --panel2: #181818;
+  --text: #f4f1e9;
+  --muted: #929292;
+  --red: #d84432;
+  --gold: #c8a45d;
+  --line: #292929;
+  --radius: 20px;
+  --max: 1180px;
 }
 
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   background:
-    radial-gradient(circle at 80% 0,#d8443218,transparent 32rem),
+    radial-gradient(circle at 80% 0, #d8443218, transparent 32rem),
     var(--bg);
-  color:var(--text);
-  font:15px/1.6 system-ui,sans-serif
-}
-a{color:inherit;text-decoration:none}
-button,select{font:inherit}
-button{cursor:pointer}
-.container{width:min(92%,var(--max));margin:auto}
-
-.label{
-  color:var(--gold);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.2em;
-  text-transform:uppercase
-}
-.muted{color:var(--muted)}
-
-/* HEADER */
-
-header{
-  position:fixed;
-  inset:0 0 auto;
-  z-index:50;
-  background:#080808df;
-  border-bottom:1px solid #fff1;
-  backdrop-filter:blur(18px)
+  color: var(--text);
+  font: 15px/1.6 system-ui, sans-serif;
 }
 
-.nav{
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.logo{
-  font-weight:900;
-  letter-spacing:.12em
+button,
+select {
+  font: inherit;
 }
 
-.logo span{
-  display:inline-grid;
-  place-items:center;
-  width:32px;
-  height:32px;
-  margin-right:8px;
-  background:var(--red);
-  font:700 18px Georgia
+button {
+  cursor: pointer;
 }
 
-nav{
-  display:flex;
-  gap:28px
+.container {
+  width: min(92%, var(--max));
+  margin: auto;
 }
 
-nav a{
-  color:var(--muted);
-  font-size:13px
+.label {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
 }
 
-nav a:hover{color:white}
-
-.menu{
-  display:none;
-  border:0;
-  background:none;
-  color:white;
-  font-size:22px
+.muted {
+  color: var(--muted);
 }
 
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  display:grid;
-  align-items:center;
-  overflow:hidden;
-  position:relative
+header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  background: #080808df;
+  border-bottom: 1px solid #fff1;
+  backdrop-filter: blur(18px);
 }
 
-.hero:after{
-  content:"武";
-  position:absolute;
-  right:2%;
-  top:15%;
-  z-index:-1;
-  color:#ffffff04;
-  font:900 55vw/.7 Georgia
+.nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.hero-content{max-width:760px}
-
-.hero h1{
-  margin:18px 0 28px;
-  font:900 clamp(4rem,11vw,8.5rem)/.8 Georgia;
-  letter-spacing:-.075em
+.logo {
+  font-weight: 900;
+  letter-spacing: .12em;
 }
 
-.hero h1 i{
-  color:var(--red);
-  font-style:normal
+.logo span {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  background: var(--red);
+  font: 700 18px Georgia;
 }
 
-.hero p{
-  max-width:600px;
-  color:var(--muted);
-  font-size:17px
+nav {
+  display: flex;
+  gap: 28px;
 }
 
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:30px
+nav a {
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.btn{
-  padding:11px 20px;
-  border:1px solid var(--line);
-  border-radius:99px;
-  transition:.2s
+nav a:hover {
+  color: white;
 }
 
-.btn:hover{transform:translateY(-2px)}
-.btn.primary{
-  background:var(--red);
-  border-color:var(--red)
+.menu {
+  display: none;
+  border: 0;
+  background: none;
+  color: white;
+  font-size: 22px;
 }
 
-/* SECTIONS */
-
-section{padding:95px 0}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  margin-bottom:40px
+.hero {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
-.section-head>p{
-  max-width:410px;
-  color:var(--muted)
+.hero:after {
+  content: "武";
+  position: absolute;
+  right: 2%;
+  top: 15%;
+  z-index: -1;
+  color: #ffffff04;
+  font: 900 55vw/.7 Georgia;
 }
 
-h2{
-  margin-top:8px;
-  font:500 clamp(2.7rem,6vw,5rem)/.9 Georgia;
-  letter-spacing:-.06em
+.hero-content {
+  max-width: 760px;
 }
 
-/* ART SELECTOR */
-
-.arts{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:12px
+.hero h1 {
+  margin: 18px 0 28px;
+  font: 900 clamp(4rem, 11vw, 8.5rem)/.8 Georgia;
+  letter-spacing: -.075em;
 }
 
-.art{
-  padding:24px;
-  min-height:220px;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  background:linear-gradient(145deg,var(--panel2),var(--panel));
-  position:relative;
-  overflow:hidden;
-  transition:.2s
+.hero h1 i {
+  color: var(--red);
+  font-style: normal;
 }
 
-.art:hover{
-  transform:translateY(-5px);
-  border-color:#d8443270
+.hero p {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 17px;
 }
 
-.art:after{
-  content:attr(data-symbol);
-  position:absolute;
-  right:-5px;
-  top:20px;
-  color:#fff5;
-  font:900 90px/.8 Georgia
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
 }
 
-.art small{
-  color:var(--red);
-  font-weight:800
+.btn {
+  padding: 11px 20px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  transition: .2s;
 }
 
-.art h3{
-  position:relative;
-  margin-top:60px;
-  font:23px/1 Georgia
+.btn:hover {
+  transform: translateY(-2px);
 }
 
-.art p{
-  position:relative;
-  margin-top:8px;
-  color:var(--muted);
-  font-size:13px
+.btn.primary {
+  background: var(--red);
+  border-color: var(--red);
 }
 
-.art button{
-  position:absolute;
-  inset:auto 18px 18px;
-  z-index:2;
-  padding:8px 12px;
-  color:white;
-  background:var(--red);
-  border:0;
-  border-radius:99px;
-  font-size:12px
+section {
+  padding: 95px 0;
 }
 
-/* LEARNING AREA */
-
-#academy{
-  background:#0e0e0e;
-  border-block:1px solid var(--line)
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
-.lesson{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:stretch
+.section-head > p {
+  max-width: 410px;
+  color: var(--muted);
 }
 
-.lesson-image{
-  min-height:570px;
-  overflow:hidden;
-  border-radius:var(--radius);
-  border:1px solid var(--line);
-  background:#050505;
-  position:relative
+h2 {
+  margin-top: 8px;
+  font: 500 clamp(2.7rem, 6vw, 5rem)/.9 Georgia;
+  letter-spacing: -.06em;
 }
 
-.lesson-image img{
-  width:100%;
-  height:100%;
-  min-height:570px;
-  object-fit:cover;
-  display:block
+.arts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
 }
 
-.image-credit{
-  position:absolute;
-  left:15px;
-  bottom:15px;
-  padding:5px 9px;
-  color:#ddd;
-  background:#000b;
-  border-radius:8px;
-  font-size:10px
+.art {
+  padding: 24px;
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, var(--panel2), var(--panel));
+  position: relative;
+  overflow: hidden;
+  transition: .2s;
 }
 
-.lesson-info{
-  display:flex;
-  flex-direction:column;
-  justify-content:center
+.art:hover {
+  transform: translateY(-5px);
+  border-color: #d8443270;
 }
 
-.lesson-number{
-  color:var(--red);
-  font:700 13px Georgia
+.art:after {
+  content: attr(data-symbol);
+  position: absolute;
+  right: -5px;
+  top: 20px;
+  color: #fff5;
+  font: 900 90px/.8 Georgia;
 }
 
-.lesson h3{
-  margin:10px 0 15px;
-  font:clamp(2.5rem,5vw,5rem)/.9 Georgia;
-  letter-spacing:-.05em
+.art small {
+  color: var(--red);
+  font-weight: 800;
 }
 
-.lesson-description{
-  max-width:550px;
-  color:var(--muted);
-  font-size:16px
+.art h3 {
+  position: relative;
+  margin-top: 60px;
+  font: 23px/1 Georgia;
 }
 
-.keypoints{
-  display:grid;
-  gap:8px;
-  margin:25px 0
+.art p {
+  position: relative;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.keypoints li{
-  list-style:none;
-  padding:11px 14px;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:10px;
-  color:#ccc
+.art button {
+  position: absolute;
+  inset: auto 18px 18px;
+  z-index: 2;
+  padding: 8px 12px;
+  color: white;
+  background: var(--red);
+  border: 0;
+  border-radius: 99px;
+  font-size: 12px;
 }
 
-.keypoints li:before{
-  content:"✓";
-  color:var(--red);
-  margin-right:10px
+#academy {
+  background: #0e0e0e;
+  border-block: 1px solid var(--line);
 }
 
-.lesson-actions{
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-  margin-top:10px
+.lesson {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.lesson-image {
+  min-height: 570px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #050505;
+  position: relative;
+}
+
+.lesson-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 570px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-credit {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  padding: 5px 9px;
+  color: #ddd;
+  background: #000b;
+  border-radius: 8px;
+  font-size: 10px;
+}
+
+.lesson-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lesson-number {
+  color: var(--red);
+  font: 700 13px Georgia;
+}
+
+.lesson h3 {
+  margin: 10px 0 15px;
+  font: clamp(2.5rem, 5vw, 5rem)/.9 Georgia;
+  letter-spacing: -.05em;
+}
+
+.lesson-description {
+  max-width: 550px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.keypoints {
+  display: grid;
+  gap: 8px;
+  margin: 25px 0;
+}
+
+.keypoints li {
+  list-style: none;
+  padding: 11px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: #ccc;
+}
+
+.keypoints li:before {
+  content: "✓";
+  color: var(--red);
+  margin-right: 10px;
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .lesson-actions button,
-.lesson-actions a{
-  padding:10px 16px;
-  border:1px solid var(--line);
-  border-radius:99px;
-  background:var(--panel);
-  color:white
+.lesson-actions a {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--panel);
+  color: white;
 }
 
-.lesson-actions .watch{
-  background:var(--red);
-  border-color:var(--red)
+.lesson-actions .watch {
+  background: var(--red);
+  border-color: var(--red);
 }
 
-.progress{
-  height:3px;
-  margin-top:35px;
-  background:var(--line)
+.progress {
+  height: 3px;
+  margin-top: 35px;
+  background: var(--line);
 }
 
-.progress span{
-  display:block;
-  height:100%;
-  width:0;
-  background:var(--red);
-  transition:.3s
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--red);
+  transition: .3s;
 }
 
-/* MOVE LIST */
-
-.move-list{
-  display:flex;
-  gap:8px;
-  overflow:auto;
-  padding:2px 0 15px;
-  margin-bottom:30px
+.move-list {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+  padding: 2px 0 15px;
+  margin-bottom: 30px;
 }
 
-.move-list button{
-  flex:0 0 auto;
-  min-width:48px;
-  padding:8px 13px;
-  color:var(--muted);
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:9px
+.move-list button {
+  flex: 0 0 auto;
+  min-width: 48px;
+  padding: 8px 13px;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 9px;
 }
 
-.move-list button.active{
-  color:white;
-  background:var(--red);
-  border-color:var(--red)
+.move-list button.active {
+  color: white;
+  background: var(--red);
+  border-color: var(--red);
 }
 
-/* QUOTE */
-
-.quote{
-  padding:90px 0;
-  border-block:1px solid var(--line);
-  font:clamp(2.2rem,5vw,4.5rem)/1.1 Georgia;
-  letter-spacing:-.045em
+.quote {
+  padding: 90px 0;
+  border-block: 1px solid var(--line);
+  font: clamp(2.2rem, 5vw, 4.5rem)/1.1 Georgia;
+  letter-spacing: -.045em;
 }
 
-.quote span{color:var(--red)}
-
-/* TRAINING */
-
-.training{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:2px;
-  margin-top:40px
+.quote span {
+  color: var(--red);
 }
 
-.training article{
-  padding:25px;
-  background:var(--panel)
+.training {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-top: 40px;
 }
 
-.training b{
-  color:var(--red);
-  font:28px Georgia
+.training article {
+  padding: 25px;
+  background: var(--panel);
 }
 
-.training h3{margin-top:25px}
-.training p{
-  margin-top:5px;
-  color:var(--muted);
-  font-size:13px
+.training b {
+  color: var(--red);
+  font: 28px Georgia;
 }
 
-/* TIMER */
-
-.practice{
-  background:#101010
+.training h3 {
+  margin-top: 25px;
 }
 
-.practice-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center
+.training p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.practice-card{
-  padding:28px;
-  background:var(--bg);
-  border:1px solid var(--line);
-  border-radius:var(--radius)
+.practice {
+  background: #101010;
 }
 
-select{
-  width:100%;
-  margin-top:8px;
-  padding:13px;
-  color:white;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:10px
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.timer{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:25px
+.practice-card {
+  padding: 28px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 
-#time{font:48px Georgia}
-
-#toggle{
-  width:52px;
-  height:52px;
-  border:0;
-  border-radius:50%;
-  color:white;
-  background:var(--red)
+select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  color: white;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
 }
 
-/* FOOTER */
-
-footer{
-  padding:30px 0;
-  border-top:1px solid var(--line)
+.timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
 }
 
-.footer{
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted)
+#time {
+  font: 48px Georgia;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:1050px){
-  .arts{grid-template-columns:repeat(3,1fr)}
+#toggle {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  background: var(--red);
 }
 
-@media(max-width:800px){
+footer {
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+}
+
+@media (max-width: 1050px) {
+  .arts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
   .lesson,
-  .practice-grid{grid-template-columns:1fr}
-
-  .lesson-image,
-  .lesson-image img{min-height:450px}
-
-  .training{grid-template-columns:1fr}
-}
-
-@media(max-width:600px){
-  nav{
-    display:none;
-    position:absolute;
-    right:15px;
-    top:62px;
-    flex-direction:column;
-    gap:16px;
-    padding:18px;
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:14px
+  .practice-grid {
+    grid-template-columns: 1fr;
   }
 
-  nav.open{display:flex}
-  .menu{display:block}
-
-  .arts{grid-template-columns:1fr 1fr}
-  .section-head{display:block}
-  .section-head>p{margin-top:20px}
-
   .lesson-image,
-  .lesson-image img{min-height:350px}
+  .lesson-image img {
+    min-height: 450px;
+  }
 
-  .footer{display:block}
+  .training {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media(max-width:420px){
-  .arts{grid-template-columns:1fr}
+@media (max-width: 600px) {
+  nav {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 62px;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .arts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head > p {
+    margin-top: 20px;
+  }
+
+  .lesson-image,
+  .lesson-image img {
+    min-height: 350px;
+  }
+
+  .footer {
+    display: block;
+  }
+}
+
+@media (max-width: 420px) {
+  .arts {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -533,11 +585,8 @@ footer{
 
 <main>
 
-<!-- HERO -->
-
 <section class="hero">
   <div class="container hero-content">
-
     <div class="label">武术 · Chinese Martial Arts</div>
 
     <h1>
@@ -555,18 +604,12 @@ footer{
       <a class="btn primary" href="#arts">Choose an art ↓</a>
       <a class="btn" href="#academy">Open academy</a>
     </div>
-
   </div>
 </section>
 
-
-<!-- ARTS -->
-
 <section id="arts">
   <div class="container">
-
     <div class="section-head">
-
       <div>
         <div class="label">01 / Choose your path</div>
         <h2>Study it<br>one move<br>at a time.</h2>
@@ -577,48 +620,35 @@ footer{
         Each lesson has an individual demonstration,
         visual reference, key points and a next-step control.
       </p>
-
     </div>
 
     <martial-arts></martial-arts>
-
   </div>
 </section>
 
-
-<!-- ACADEMY -->
-
 <section id="academy">
-
   <div class="container">
 
     <div class="section-head">
-
       <div>
         <div class="label">02 / Move by move</div>
         <h2 id="academyTitle">Kung Fu</h2>
       </div>
 
       <p id="academyIntro" class="muted"></p>
-
     </div>
 
     <div class="move-list" id="moveList"></div>
 
     <div class="lesson">
-
       <div class="lesson-image">
-
         <img id="moveImage" alt="Martial arts movement">
-
         <div class="image-credit" id="imageCredit">
           Reference image
         </div>
-
       </div>
 
       <div class="lesson-info">
-
         <span class="lesson-number" id="moveNumber">
           MOVE 01
         </span>
@@ -630,10 +660,7 @@ footer{
         <ul class="keypoints" id="keypoints"></ul>
 
         <div class="lesson-actions">
-
-          <button id="previous">
-            ← Previous
-          </button>
+          <button id="previous">← Previous</button>
 
           <a
             id="watch"
@@ -644,31 +671,19 @@ footer{
             ▶ Demonstration
           </a>
 
-          <button id="next">
-            Next →
-          </button>
-
+          <button id="next">Next →</button>
         </div>
 
         <div class="progress">
           <span id="progress"></span>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- PHILOSOPHY -->
-
 <section>
-
   <div class="container">
-
     <div class="label">03 / Philosophy</div>
 
     <div class="quote">
@@ -676,20 +691,13 @@ footer{
       Understand the structure.<br>
       <span>Then make it your own.</span>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- FOUNDATION -->
-
 <section id="training">
-
   <div class="container">
 
     <div class="section-head">
-
       <div>
         <div class="label">04 / Foundation</div>
         <h2>Build the<br>body first.</h2>
@@ -699,24 +707,16 @@ footer{
         Learn the basics before attempting advanced or
         acrobatic movements. Quality comes before speed.
       </p>
-
     </div>
 
     <training-path></training-path>
-
   </div>
-
 </section>
 
-
-<!-- PRACTICE -->
-
 <section class="practice" id="practice">
-
   <div class="container practice-grid">
 
     <div>
-
       <div class="label">05 / Daily practice</div>
 
       <h2>
@@ -729,11 +729,9 @@ footer{
         For demanding conditioning, weapons, partner work,
         acrobatics or impact training, work with a qualified instructor.
       </p>
-
     </div>
 
     <div class="practice-card">
-
       <label class="muted">
         Training focus
       </label>
@@ -748,475 +746,481 @@ footer{
         <option>Yinggong</option>
         <option>Forms</option>
         <option>Weapons</option>
+        <option>Feiyanzhoubi</option>
+        <option>Gaolaigaoqiludifeitengfa</option>
       </select>
 
       <div class="timer">
         <span id="time">05:00</span>
         <button id="toggle">▶</button>
       </div>
-
     </div>
 
   </div>
-
 </section>
 
 </main>
 
 <site-footer></site-footer>
 
-
 <script>
+const url = (host, path) =>
+  ["https:", host, path].join("/");
 
-/* ═══════════════════════════════════════════════
-   URL BUILDER
-   Keeps the data readable while allowing external
-   educational images/videos to be swapped easily.
-   ═══════════════════════════════════════════════ */
+const commons = "//commons.wikimedia.org";
+const imageHost = "//chinakungfu.net";
 
-const url=(host,path)=>
-  ["https:",host,path].join("/");
+const arts = {
 
-
-/* ═══════════════════════════════════════════════
-   MOVE LIBRARY
-
-   Each move has:
-   - title
-   - image
-   - description
-   - key points
-   - demonstration
-   ═══════════════════════════════════════════════ */
-
-const imageHost="//chinakungfu.net";
-const commons="//commons.wikimedia.org";
-
-
-const arts={
-
-  "Kung Fu":{
-    symbol:"拳",
-    description:"Traditional Chinese martial-arts training. Start with basic stances, stepping and hand shapes.",
-    moves:[
+  "Kung Fu": {
+    symbol: "拳",
+    description: "Traditional Chinese martial-arts training. Start with basic stances, stepping and hand shapes.",
+    moves: [
       {
-        title:"Horse Stance — Ma Bu",
-        image:url(imageHost,"/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F01-xie-xing.webp&w=1200"),
-        text:"A foundational stance used to develop posture, leg strength and stability.",
-        points:["Feet grounded","Knees track with toes","Chest relaxed"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+horse+stance+tutorial")
+        title: "Horse Stance — Ma Bu",
+        image: url(imageHost, "/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F01-xie-xing.webp&w=1200"),
+        text: "A foundational stance used to develop posture, leg strength and stability.",
+        points: ["Feet grounded", "Knees track with toes", "Chest relaxed"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+horse+stance+tutorial")
       },
       {
-        title:"Bow Stance — Gong Bu",
-        image:url(imageHost,"/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F02-pan-zhou.webp&w=1200"),
-        text:"A forward stance connecting the lower body with stepping and hand techniques.",
-        points:["Front knee controlled","Rear leg extended","Hips stay aligned"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+bow+stance+tutorial")
+        title: "Bow Stance — Gong Bu",
+        image: url(imageHost, "/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F02-pan-zhou.webp&w=1200"),
+        text: "A forward stance connecting the lower body with stepping and hand techniques.",
+        points: ["Front knee controlled", "Rear leg extended", "Hips stay aligned"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+bow+stance+tutorial")
       },
       {
-        title:"Guard Position",
-        image:url(imageHost,"/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F03-shu-shen.webp&w=1200"),
-        text:"Organize the hands and body before entering a technique.",
-        points:["Hands relaxed","Shoulders down","Eyes forward"],
-        watch:url("www.youtube.com","results?search_query=shaolin+kung+fu+guard+position")
+        title: "Guard Position",
+        image: url(imageHost, "/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F03-shu-shen.webp&w=1200"),
+        text: "Organize the hands and body before entering a technique.",
+        points: ["Hands relaxed", "Shoulders down", "Eyes forward"],
+        watch: url("www.youtube.com", "results?search_query=shaolin+kung+fu+guard+position")
       },
       {
-        title:"Forward Step",
-        image:url(imageHost,"/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F04-ying-shi-chui.webp&w=1200"),
-        text:"Learn to transfer the body forward without losing balance.",
-        points:["Push from rear leg","Keep torso stable","Land softly"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+forward+step+training")
+        title: "Forward Step",
+        image: url(imageHost, "/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F04-ying-shi-chui.webp&w=1200"),
+        text: "Learn to transfer the body forward without losing balance.",
+        points: ["Push from rear leg", "Keep torso stable", "Land softly"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+forward+step+training")
       },
       {
-        title:"Straight Punch",
-        image:url(imageHost,"/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F06-shi-zi-da-zhang-kou.webp&w=1200"),
-        text:"A basic hand action coordinated with stance and body alignment.",
-        points:["Straight wrist","Relax shoulder","Rotate from the body"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+straight+punch+tutorial")
+        title: "Straight Punch",
+        image: url(imageHost, "/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F06-shi-zi-da-zhang-kou.webp&w=1200"),
+        text: "A basic hand action coordinated with stance and body alignment.",
+        points: ["Straight wrist", "Relax shoulder", "Rotate from the body"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+straight+punch+tutorial")
       },
       {
-        title:"Five-Step Fist",
-        image:url(imageHost,"/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F07-shun-shou-qian-yang.webp&w=1200"),
-        text:"A beginner sequence connecting several fundamental stances and hand methods.",
-        points:["Learn sections first","Practice slowly","Join sections last"],
-        watch:url("www.youtube.com","results?search_query=shaolin+five+step+fist+tutorial")
+        title: "Five-Step Fist",
+        image: url(imageHost, "/_next/image?q=75&url=%2Fimages%2Ftutorials%2Fshaolin-basic-techniques%2F07-shun-shou-qian-yang.webp&w=1200"),
+        text: "A beginner sequence connecting several fundamental stances and hand methods.",
+        points: ["Learn sections first", "Practice slowly", "Join sections last"],
+        watch: url("www.youtube.com", "results?search_query=shaolin+five+step+fist+tutorial")
       }
     ]
   },
 
-
-  "Wushu":{
-    symbol:"武",
-    description:"Modern Chinese martial sport emphasizing precise stances, kicks, jumps, forms and athletic movement.",
-    moves:[
+  "Wushu": {
+    symbol: "武",
+    description: "Modern Chinese martial sport emphasizing precise stances, kicks, jumps, forms and athletic movement.",
+    moves: [
       {
-        title:"Ready Stance",
-        image:url(commons,"wiki/Special:Redirect/file/Wushu.jpg"),
-        text:"Establish posture and balance before beginning a routine.",
-        points:["Tall posture","Relax shoulders","Eyes forward"],
-        watch:url("www.youtube.com","results?search_query=wushu+basic+stance+tutorial")
+        title: "Ready Stance",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu.jpg"),
+        text: "Establish posture and balance before beginning a routine.",
+        points: ["Tall posture", "Relax shoulders", "Eyes forward"],
+        watch: url("www.youtube.com", "results?search_query=wushu+basic+stance+tutorial")
       },
       {
-        title:"Bow Stance",
-        image:url(commons,"wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
-        text:"A fundamental Wushu stance used repeatedly in forms.",
-        points:["Front knee controlled","Rear foot grounded","Hips square"],
-        watch:url("www.youtube.com","results?search_query=wushu+gong+bu+bow+stance")
+        title: "Bow Stance",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
+        text: "A fundamental Wushu stance used repeatedly in forms.",
+        points: ["Front knee controlled", "Rear foot grounded", "Hips square"],
+        watch: url("www.youtube.com", "results?search_query=wushu+gong+bu+bow+stance")
       },
       {
-        title:"Front Kick",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
-        text:"Develop controlled leg extension before adding speed.",
-        points:["Support leg stable","Lift knee first","Return under control"],
-        watch:url("www.youtube.com","results?search_query=wushu+front+kick+tutorial")
+        title: "Front Kick",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "Develop controlled leg extension before adding speed.",
+        points: ["Support leg stable", "Lift knee first", "Return under control"],
+        watch: url("www.youtube.com", "results?search_query=wushu+front+kick+tutorial")
       },
       {
-        title:"Side Kick",
-        image:url(commons,"wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_10.jpg"),
-        text:"A lateral kicking movement requiring balance and hip control.",
-        points:["Turn support foot","Keep torso controlled","Retract cleanly"],
-        watch:url("www.youtube.com","results?search_query=wushu+side+kick+tutorial")
+        title: "Side Kick",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_10.jpg"),
+        text: "A lateral kicking movement requiring balance and hip control.",
+        points: ["Turn support foot", "Keep torso controlled", "Retract cleanly"],
+        watch: url("www.youtube.com", "results?search_query=wushu+side+kick+tutorial")
       },
       {
-        title:"Jump Preparation",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_05.jpg"),
-        text:"Prepare jumping techniques with basic balance and landing mechanics.",
-        points:["Bend before takeoff","Land softly","Build progressively"],
-        watch:url("www.youtube.com","results?search_query=wushu+jump+training+beginner")
+        title: "Jump Preparation",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_05.jpg"),
+        text: "Prepare jumping techniques with basic balance and landing mechanics.",
+        points: ["Bend before takeoff", "Land softly", "Build progressively"],
+        watch: url("www.youtube.com", "results?search_query=wushu+jump+training+beginner")
       }
     ]
   },
 
-
-  "Qinggong":{
-    symbol:"轻",
-    description:"Movement traditions emphasizing agility, balance, lightness and body control. Terminology and exercises vary by lineage.",
-    moves:[
+  "Qinggong": {
+    symbol: "轻",
+    description: "Movement traditions emphasizing agility, balance, lightness and body control. Terminology and exercises vary by lineage.",
+    moves: [
       {
-        title:"Balance",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
-        text:"Begin with stable single-leg balance before attempting dynamic work.",
-        points:["Fix your gaze","Control the standing leg","Breathe normally"],
-        watch:url("www.youtube.com","results?search_query=qinggong+balance+training")
+        title: "Balance",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "Begin with stable single-leg balance before attempting dynamic work.",
+        points: ["Fix your gaze", "Control the standing leg", "Breathe normally"],
+        watch: url("www.youtube.com", "results?search_query=qinggong+balance+training")
       },
       {
-        title:"Controlled Step",
-        image:url(commons,"wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
-        text:"Move lightly while maintaining stable posture.",
-        points:["Quiet feet","Small steps first","Keep center controlled"],
-        watch:url("www.youtube.com","results?search_query=qinggong+footwork+training")
+        title: "Controlled Step",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
+        text: "Move lightly while maintaining stable posture.",
+        points: ["Quiet feet", "Small steps first", "Keep center controlled"],
+        watch: url("www.youtube.com", "results?search_query=qinggong+footwork+training")
       },
       {
-        title:"Low Movement",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran-_Photo_By_2007-Mostafa_meraji_12.jpg"),
-        text:"Develop lower-body mobility gradually rather than forcing depth.",
-        points:["Keep knees aligned","Stay controlled","Do not force range"],
-        watch:url("www.youtube.com","results?search_query=qinggong+training+martial+arts")
+        title: "Low Movement",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran-_Photo_By_2007-Mostafa_meraji_12.jpg"),
+        text: "Develop lower-body mobility gradually rather than forcing depth.",
+        points: ["Keep knees aligned", "Stay controlled", "Do not force range"],
+        watch: url("www.youtube.com", "results?search_query=qinggong+training+martial+arts")
       }
     ]
   },
 
-
-  "Ruangong":{
-    symbol:"柔",
-    description:"Flexibility and mobility training. Exact exercises differ between schools, so this section focuses on general movement preparation.",
-    moves:[
+  "Ruangong": {
+    symbol: "柔",
+    description: "Flexibility and mobility training. Exact exercises differ between schools, so this section focuses on general movement preparation.",
+    moves: [
       {
-        title:"Standing Mobility",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"Start by moving joints through comfortable ranges.",
-        points:["Move slowly","Avoid bouncing","Breathe continuously"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+mobility+training")
+        title: "Standing Mobility",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "Start by moving joints through comfortable ranges.",
+        points: ["Move slowly", "Avoid bouncing", "Breathe continuously"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+mobility+training")
       },
       {
-        title:"Hip Mobility",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
-        text:"Prepare the hips for stances, kicks and lower positions.",
-        points:["Keep spine controlled","Use gradual range","Never force pain"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+hip+mobility")
+        title: "Hip Mobility",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "Prepare the hips for stances, kicks and lower positions.",
+        points: ["Keep spine controlled", "Use gradual range", "Never force pain"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+hip+mobility")
       },
       {
-        title:"Leg Flexibility",
-        image:url(commons,"wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_10.jpg"),
-        text:"Progressively develop the range needed for kicking and stances.",
-        points:["Warm up first","Increase range slowly","Control the return"],
-        watch:url("www.youtube.com","results?search_query=wushu+leg+flexibility+training")
+        title: "Leg Flexibility",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_10.jpg"),
+        text: "Progressively develop the range needed for kicking and stances.",
+        points: ["Warm up first", "Increase range slowly", "Control the return"],
+        watch: url("www.youtube.com", "results?search_query=wushu+leg+flexibility+training")
       }
     ]
   },
 
-
-  "Yinggong":{
-    symbol:"硬",
-    description:"External conditioning traditions. Conditioning should progress gradually and should not involve unsafe impact practices.",
-    moves:[
+  "Yinggong": {
+    symbol: "硬",
+    description: "External conditioning traditions. Conditioning should progress gradually and should not involve unsafe impact practices.",
+    moves: [
       {
-        title:"Body Alignment",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran-_Photo_By_2007-Mostafa_meraji_12.jpg"),
-        text:"Build a stable structure before introducing conditioning.",
-        points:["Neutral spine","Stable feet","Relax unnecessary tension"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+conditioning+beginner")
+        title: "Body Alignment",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran-_Photo_By_2007-Mostafa_meraji_12.jpg"),
+        text: "Build a stable structure before introducing conditioning.",
+        points: ["Neutral spine", "Stable feet", "Relax unnecessary tension"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+conditioning+beginner")
       },
       {
-        title:"Strength Position",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_02.jpg"),
-        text:"Develop strength using controlled bodyweight exercises.",
-        points:["Controlled repetitions","Stable breathing","Progress gradually"],
-        watch:url("www.youtube.com","results?search_query=shaolin+conditioning+training")
+        title: "Strength Position",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_02.jpg"),
+        text: "Develop strength using controlled bodyweight exercises.",
+        points: ["Controlled repetitions", "Stable breathing", "Progress gradually"],
+        watch: url("www.youtube.com", "results?search_query=shaolin+conditioning+training")
       },
       {
-        title:"External Conditioning",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
-        text:"Traditional hard conditioning should be learned from a qualified teacher.",
-        points:["Start gently","Never condition injured areas","Avoid unsafe impact"],
-        watch:url("www.youtube.com","results?search_query=yinggong+conditioning")
+        title: "External Conditioning",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "Traditional hard conditioning should be learned from a qualified teacher.",
+        points: ["Start gently", "Never condition injured areas", "Avoid unsafe impact"],
+        watch: url("www.youtube.com", "results?search_query=yinggong+conditioning")
       }
     ]
   },
 
-
-  "Shibaban Bingren":{
-    symbol:"兵",
-    description:"The traditional concept of eighteen weapons. Each weapon has its own curriculum and should be taught progressively.",
-    moves:[
+  "Shibaban Bingren": {
+    symbol: "兵",
+    description: "The traditional concept of eighteen weapons. Each weapon has its own curriculum and should be taught progressively.",
+    moves: [
       {
-        title:"Staff — Basic Hold",
-        image:url(commons,"wiki/Special:Redirect/file/Wushu.jpg"),
-        text:"Learn safe grip, posture and distance before swinging a weapon.",
-        points:["Two-hand control","Know the weapon's ends","Maintain distance"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+staff+basic+training")
+        title: "Staff — Basic Hold",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu.jpg"),
+        text: "Learn safe grip, posture and distance before swinging a weapon.",
+        points: ["Two-hand control", "Know the weapon's ends", "Maintain distance"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+staff+basic+training")
       },
       {
-        title:"Staff — Basic Step",
-        image:url(commons,"wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
-        text:"Coordinate footwork with the weapon without rushing.",
-        points:["Step first","Keep weapon controlled","Practice slowly"],
-        watch:url("www.youtube.com","results?search_query=wushu+staff+footwork")
+        title: "Staff — Basic Step",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
+        text: "Coordinate footwork with the weapon without rushing.",
+        points: ["Step first", "Keep weapon controlled", "Practice slowly"],
+        watch: url("www.youtube.com", "results?search_query=wushu+staff+footwork")
       },
       {
-        title:"Straight Sword — Basic Grip",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
-        text:"Learn the correct grip and safe orientation before practicing techniques.",
-        points:["Controlled grip","Keep surroundings clear","Use a training weapon"],
-        watch:url("www.youtube.com","results?search_query=wushu+jian+basic+training")
+        title: "Straight Sword — Basic Grip",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "Learn the correct grip and safe orientation before practicing techniques.",
+        points: ["Controlled grip", "Keep surroundings clear", "Use a training weapon"],
+        watch: url("www.youtube.com", "results?search_query=wushu+jian+basic+training")
       },
       {
-        title:"Spear — Basic Position",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_05.jpg"),
-        text:"Establish posture and distance with a qualified weapons instructor.",
-        points:["Long-distance awareness","Two-hand control","Clear practice space"],
-        watch:url("www.youtube.com","results?search_query=wushu+spear+basic+training")
+        title: "Spear — Basic Position",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_05.jpg"),
+        text: "Establish posture and distance with a qualified weapons instructor.",
+        points: ["Long-distance awareness", "Two-hand control", "Clear practice space"],
+        watch: url("www.youtube.com", "results?search_query=wushu+spear+basic+training")
       }
     ]
   },
 
-
-  "Qigong":{
-    symbol:"气",
-    description:"Breath, posture, attention and gentle movement. Different Qigong systems contain different sequences.",
-    moves:[
+  "Qigong": {
+    symbol: "气",
+    description: "Breath, posture, attention and gentle movement. Different Qigong systems contain different sequences.",
+    moves: [
       {
-        title:"Standing — Wuji",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"A relaxed standing practice used in many internal training traditions.",
-        points:["Feet comfortable","Knees soft","Breathing natural"],
-        watch:url("www.youtube.com","results?search_query=qigong+wuji+standing+tutorial")
+        title: "Standing — Wuji",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "A relaxed standing practice used in many internal training traditions.",
+        points: ["Feet comfortable", "Knees soft", "Breathing natural"],
+        watch: url("www.youtube.com", "results?search_query=qigong+wuji+standing+tutorial")
       },
       {
-        title:"Raise the Arms",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"Lift the arms slowly while maintaining relaxed breathing.",
-        points:["Relax shoulders","Move slowly","Do not hold the breath"],
-        watch:url("www.youtube.com","results?search_query=qigong+raise+arms+tutorial")
+        title: "Raise the Arms",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "Lift the arms slowly while maintaining relaxed breathing.",
+        points: ["Relax shoulders", "Move slowly", "Do not hold the breath"],
+        watch: url("www.youtube.com", "results?search_query=qigong+raise+arms+tutorial")
       },
       {
-        title:"Open the Chest",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"A gentle movement pattern found in several Qigong systems.",
-        points:["No forced stretch","Relax the neck","Keep breathing"],
-        watch:url("www.youtube.com","results?search_query=qigong+opening+chest+exercise")
+        title: "Open the Chest",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "A gentle movement pattern found in several Qigong systems.",
+        points: ["No forced stretch", "Relax the neck", "Keep breathing"],
+        watch: url("www.youtube.com", "results?search_query=qigong+opening+chest+exercise")
       },
       {
-        title:"Closing",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"Return to a comfortable standing position and allow breathing to settle.",
-        points:["Slow down","Relax the hands","Finish calmly"],
-        watch:url("www.youtube.com","results?search_query=qigong+closing+exercise")
+        title: "Closing",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "Return to a comfortable standing position and allow breathing to settle.",
+        points: ["Slow down", "Relax the hands", "Finish calmly"],
+        watch: url("www.youtube.com", "results?search_query=qigong+closing+exercise")
       }
     ]
   },
 
-
-  "Neigong":{
-    symbol:"内",
-    description:"Internal training varies substantially between lineages. These are broad study categories rather than one universal Neigong form.",
-    moves:[
+  "Neigong": {
+    symbol: "内",
+    description: "Internal training varies substantially between lineages. These are broad study categories rather than one universal Neigong form.",
+    moves: [
       {
-        title:"Standing Alignment",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"Develop relaxed structural alignment while standing.",
-        points:["Relax downward","Keep spine natural","Avoid forced posture"],
-        watch:url("www.youtube.com","results?search_query=neigong+standing+training")
+        title: "Standing Alignment",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "Develop relaxed structural alignment while standing.",
+        points: ["Relax downward", "Keep spine natural", "Avoid forced posture"],
+        watch: url("www.youtube.com", "results?search_query=neigong+standing+training")
       },
       {
-        title:"Breath Awareness",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"Observe breathing without forcing it.",
-        points:["Natural breathing","Relax abdomen","Do not strain"],
-        watch:url("www.youtube.com","results?search_query=neigong+breathing+training")
+        title: "Breath Awareness",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "Observe breathing without forcing it.",
+        points: ["Natural breathing", "Relax abdomen", "Do not strain"],
+        watch: url("www.youtube.com", "results?search_query=neigong+breathing+training")
       },
       {
-        title:"Whole-Body Coordination",
-        image:url(commons,"wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
-        text:"Coordinate relaxed movement through the whole body.",
-        points:["Move as one unit","Avoid excess tension","Work slowly"],
-        watch:url("www.youtube.com","results?search_query=neigong+internal+martial+arts")
+        title: "Whole-Body Coordination",
+        image: url(commons, "wiki/Special:Redirect/file/World_Tai_Chi_Day.jpg"),
+        text: "Coordinate relaxed movement through the whole body.",
+        points: ["Move as one unit", "Avoid excess tension", "Work slowly"],
+        watch: url("www.youtube.com", "results?search_query=neigong+internal+martial+arts")
       }
     ]
   },
 
+  "Waigong": {
+    symbol: "外",
+    description: "External training focused on physical qualities such as strength, endurance, structure and conditioning.",
+    moves: [
+      {
+        title: "Basic Strength",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran-_Photo_By_2007-Mostafa_meraji_12.jpg"),
+        text: "Develop basic strength before specialized conditioning.",
+        points: ["Controlled form", "Progress gradually", "Recover adequately"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+waigong+strength")
+      },
+      {
+        title: "Stance Conditioning",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "Use foundational stances to build lower-body endurance.",
+        points: ["Stable knees", "Natural breathing", "Short sessions first"],
+        watch: url("www.youtube.com", "results?search_query=kung+fu+stance+conditioning")
+      },
+      {
+        title: "Body Conditioning",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_02.jpg"),
+        text: "Traditional conditioning should be supervised and progressed carefully.",
+        points: ["No excessive impact", "Protect joints", "Stop when pain occurs"],
+        watch: url("www.youtube.com", "results?search_query=waigong+conditioning+kung+fu")
+      }
+    ]
+  },
 
-  "Waigong":{
-    symbol:"外",
-    description:"External training focused on physical qualities such as strength, endurance, structure and conditioning.",
-    moves:[
+  "Feiyanzhoubi": {
+    symbol: "飞",
+    description: "A high-level aerial movement category associated with fast, dynamic and acrobatic martial-arts movement. Build the fundamentals before attempting advanced aerial techniques.",
+    moves: [
       {
-        title:"Basic Strength",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran-_Photo_By_2007-Mostafa_meraji_12.jpg"),
-        text:"Develop basic strength before specialized conditioning.",
-        points:["Controlled form","Progress gradually","Recover adequately"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+waigong+strength")
+        title: "Aerial Preparation",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu.jpg"),
+        text: "Develop jumping mechanics, body control and safe landing skills before attempting advanced aerial movements.",
+        points: ["Build jump strength first", "Learn safe landing mechanics", "Use qualified supervision"],
+        watch: url("www.youtube.com", "results?search_query=wushu+aerial+training+beginner")
       },
       {
-        title:"Stance Conditioning",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
-        text:"Use foundational stances to build lower-body endurance.",
-        points:["Stable knees","Natural breathing","Short sessions first"],
-        watch:url("www.youtube.com","results?search_query=kung+fu+stance+conditioning")
+        title: "Takeoff Mechanics",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_05.jpg"),
+        text: "Practice controlled takeoff mechanics without immediately adding rotation or complexity.",
+        points: ["Use both legs appropriately", "Keep the torso controlled", "Start with low intensity"],
+        watch: url("www.youtube.com", "results?search_query=wushu+jump+takeoff+training")
       },
       {
-        title:"Body Conditioning",
-        image:url(commons,"wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_02.jpg"),
-        text:"Traditional conditioning should be supervised and progressed carefully.",
-        points:["No excessive impact","Protect joints","Stop when pain occurs"],
-        watch:url("www.youtube.com","results?search_query=waigong+conditioning+kung+fu")
+        title: "Air Position",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_10.jpg"),
+        text: "Learn to maintain body awareness during a jump before progressing to complex aerial combinations.",
+        points: ["Maintain spatial awareness", "Keep movement controlled", "Progress gradually"],
+        watch: url("www.youtube.com", "results?search_query=wushu+aerial+body+control")
+      },
+      {
+        title: "Landing Control",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "A controlled landing is more important than height. Practice landing mechanics before increasing difficulty.",
+        points: ["Land softly", "Bend through the legs", "Keep balance after landing"],
+        watch: url("www.youtube.com", "results?search_query=wushu+safe+landing+training")
+      },
+      {
+        title: "Aerial Progression",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
+        text: "Advanced aerial techniques should be learned progressively with appropriate mats and an experienced instructor.",
+        points: ["Use proper equipment", "Increase difficulty slowly", "Never train advanced aerials alone"],
+        watch: url("www.youtube.com", "results?search_query=wushu+aerial+training+progression")
+      }
+    ]
+  },
+
+  "Gaolaigaoqiludifeitengfa": {
+    symbol: "腾",
+    description: "An advanced flying and aerial movement category. Treat it as a progressive study of jumping, kicking, rotation, timing and landing mechanics.",
+    moves: [
+      {
+        title: "Jumping Foundation",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu.jpg"),
+        text: "Build the leg strength, balance and landing control required for advanced jumping work.",
+        points: ["Strength before height", "Control the takeoff", "Practice safe landings"],
+        watch: url("www.youtube.com", "results?search_query=wushu+jumping+foundation")
+      },
+      {
+        title: "Flying Kick Preparation",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"),
+        text: "Develop the basic coordination of a jump and kick before attempting complex aerial combinations.",
+        points: ["Lift before extending", "Keep support mechanics controlled", "Return safely"],
+        watch: url("www.youtube.com", "results?search_query=wushu+flying+kick+training")
+      },
+      {
+        title: "Aerial Rotation",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_10.jpg"),
+        text: "Rotational skills require strong spatial awareness and should be introduced progressively.",
+        points: ["Master basic jumps first", "Use appropriate mats", "Train with supervision"],
+        watch: url("www.youtube.com", "results?search_query=wushu+aerial+rotation+training")
+      },
+      {
+        title: "Flying Combination",
+        image: url(commons, "wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_05.jpg"),
+        text: "Combine jumping and kicking mechanics only after the individual components are consistent.",
+        points: ["Combine one element at a time", "Keep timing controlled", "Prioritize landing"],
+        watch: url("www.youtube.com", "results?search_query=wushu+flying+kick+combination")
+      },
+      {
+        title: "Advanced Aerial Form",
+        image: url(commons, "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"),
+        text: "Advanced aerial sequences belong in structured training with qualified coaching and suitable safety equipment.",
+        points: ["Qualified instructor", "Proper training surface", "Progress only when ready"],
+        watch: url("www.youtube.com", "results?search_query=wushu+advanced+aerial+training")
       }
     ]
   }
-
 };
 
-
-/* ═══════════════════════════════════════════════
-   ART COMPONENT
-   ═══════════════════════════════════════════════ */
-
-class MartialArts extends HTMLElement{
-
-  connectedCallback(){
-
-    this.innerHTML=`
+class MartialArts extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
       <div class="arts">
-
-        ${Object.entries(arts).map(([name,art],i)=>`
-
-          <article
-            class="art"
-            data-symbol="${art.symbol}"
-          >
-
-            <small>
-              ${String(i+1).padStart(2,"0")}
-            </small>
-
+        ${Object.entries(arts).map(([name, art], i) => `
+          <article class="art" data-symbol="${art.symbol}">
+            <small>${String(i + 1).padStart(2, "0")}</small>
             <h3>${name}</h3>
-
             <p>${art.description}</p>
-
             <button data-art="${name}">
               Learn ${art.moves.length} moves →
             </button>
-
           </article>
-
         `).join("")}
-
       </div>
     `;
 
-    this.querySelectorAll("[data-art]").forEach(button=>{
-
-      button.onclick=()=>{
-
+    this.querySelectorAll("[data-art]").forEach(button => {
+      button.onclick = () => {
         loadArt(button.dataset.art);
 
         document
           .querySelector("#academy")
-          .scrollIntoView({behavior:"smooth"});
-
+          .scrollIntoView({ behavior: "smooth" });
       };
-
     });
-
   }
 }
 
-
-/* ═══════════════════════════════════════════════
-   TRAINING COMPONENT
-   ═══════════════════════════════════════════════ */
-
-class TrainingPath extends HTMLElement{
-
-  connectedCallback(){
-
-    const data=[
-      ["01","Structure","Build balance and alignment."],
-      ["02","Mobility","Develop usable range."],
-      ["03","Technique","Connect body mechanics."],
-      ["04","Conditioning","Build strength progressively."],
-      ["05","Awareness","Develop timing and attention."]
+class TrainingPath extends HTMLElement {
+  connectedCallback() {
+    const data = [
+      ["01", "Structure", "Build balance and alignment."],
+      ["02", "Mobility", "Develop usable range."],
+      ["03", "Technique", "Connect body mechanics."],
+      ["04", "Conditioning", "Build strength progressively."],
+      ["05", "Awareness", "Develop timing and attention."]
     ];
 
-    this.innerHTML=`
+    this.innerHTML = `
       <div class="training">
-
-        ${data.map(x=>`
-
+        ${data.map(x => `
           <article>
             <b>${x[0]}</b>
             <h3>${x[1]}</h3>
             <p>${x[2]}</p>
           </article>
-
         `).join("")}
-
       </div>
     `;
   }
 }
 
-
-/* ═══════════════════════════════════════════════
-   HEADER
-   ═══════════════════════════════════════════════ */
-
-class SiteHeader extends HTMLElement{
-
-  connectedCallback(){
-
-    this.innerHTML=`
+class SiteHeader extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
       <header>
-
         <div class="container nav">
-
           <a class="logo" href="#">
             <span>武</span>WUSHU
           </a>
 
-          <button class="menu">
-            ☰
-          </button>
+          <button class="menu">☰</button>
 
           <nav>
             <a href="#arts">Arts</a>
@@ -1224,235 +1228,177 @@ class SiteHeader extends HTMLElement{
             <a href="#training">Training</a>
             <a href="#practice">Practice</a>
           </nav>
-
         </div>
-
       </header>
     `;
 
-    const menu=this.querySelector(".menu");
-    const nav=this.querySelector("nav");
+    const menu = this.querySelector(".menu");
+    const nav = this.querySelector("nav");
 
-    menu.onclick=()=>nav.classList.toggle("open");
-    nav.onclick=()=>nav.classList.remove("open");
+    menu.onclick = () => nav.classList.toggle("open");
+    nav.onclick = () => nav.classList.remove("open");
   }
 }
 
-
-/* ═══════════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════════ */
-
-class SiteFooter extends HTMLElement{
-
-  connectedCallback(){
-
-    this.innerHTML=`
+class SiteFooter extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
       <footer>
-
         <div class="container footer">
-
           <span>武 WUSHU</span>
-
-          <span>
-            Train · Breathe · Move · Refine
-          </span>
-
+          <span>Train · Breathe · Move · Refine</span>
         </div>
-
       </footer>
     `;
   }
 }
 
-customElements.define("martial-arts",MartialArts);
-customElements.define("training-path",TrainingPath);
-customElements.define("site-header",SiteHeader);
-customElements.define("site-footer",SiteFooter);
+customElements.define("martial-arts", MartialArts);
+customElements.define("training-path", TrainingPath);
+customElements.define("site-header", SiteHeader);
+customElements.define("site-footer", SiteFooter);
 
+let currentArt = "Kung Fu";
+let currentMove = 0;
 
-/* ═══════════════════════════════════════════════
-   MOVE VIEWER
-   ═══════════════════════════════════════════════ */
+const title = document.querySelector("#academyTitle");
+const intro = document.querySelector("#academyIntro");
+const list = document.querySelector("#moveList");
+const image = document.querySelector("#moveImage");
+const credit = document.querySelector("#imageCredit");
+const number = document.querySelector("#moveNumber");
+const moveTitle = document.querySelector("#moveTitle");
+const description = document.querySelector("#moveDescription");
+const keypoints = document.querySelector("#keypoints");
+const previous = document.querySelector("#previous");
+const next = document.querySelector("#next");
+const watch = document.querySelector("#watch");
+const progress = document.querySelector("#progress");
 
-let currentArt="Kung Fu";
-let currentMove=0;
+function loadArt(name) {
+  currentArt = name;
+  currentMove = 0;
 
-const title=document.querySelector("#academyTitle");
-const intro=document.querySelector("#academyIntro");
-const list=document.querySelector("#moveList");
-const image=document.querySelector("#moveImage");
-const credit=document.querySelector("#imageCredit");
-const number=document.querySelector("#moveNumber");
-const moveTitle=document.querySelector("#moveTitle");
-const description=document.querySelector("#moveDescription");
-const keypoints=document.querySelector("#keypoints");
-const previous=document.querySelector("#previous");
-const next=document.querySelector("#next");
-const watch=document.querySelector("#watch");
-const progress=document.querySelector("#progress");
+  const art = arts[name];
 
-
-function loadArt(name){
-
-  currentArt=name;
-  currentMove=0;
-
-  const art=arts[name];
-
-  title.textContent=name;
-  intro.textContent=art.description;
+  title.textContent = name;
+  intro.textContent = art.description;
 
   renderMoveButtons();
   renderMove();
-
 }
 
-
-function renderMoveButtons(){
-
-  list.innerHTML=arts[currentArt].moves
-    .map((move,i)=>`
-
+function renderMoveButtons() {
+  list.innerHTML = arts[currentArt].moves
+    .map((move, i) => `
       <button
-        class="${i===currentMove?"active":""}"
+        class="${i === currentMove ? "active" : ""}"
         data-move="${i}"
       >
-        ${String(i+1).padStart(2,"0")}
+        ${String(i + 1).padStart(2, "0")}
       </button>
+    `)
+    .join("");
 
-    `).join("");
-
-  list.querySelectorAll("button").forEach(button=>{
-
-    button.onclick=()=>{
-      currentMove=Number(button.dataset.move);
+  list.querySelectorAll("button").forEach(button => {
+    button.onclick = () => {
+      currentMove = Number(button.dataset.move);
       renderMove();
     };
-
   });
-
 }
 
+function renderMove() {
+  const moves = arts[currentArt].moves;
+  const move = moves[currentMove];
 
-function renderMove(){
+  number.textContent =
+    `MOVE ${String(currentMove + 1).padStart(2, "0")} / ${moves.length}`;
 
-  const moves=arts[currentArt].moves;
-  const move=moves[currentMove];
+  moveTitle.textContent = move.title;
+  description.textContent = move.text;
 
-  number.textContent=
-    `MOVE ${String(currentMove+1).padStart(2,"0")} / ${moves.length}`;
+  image.src = move.image;
+  image.alt = `${currentArt} — ${move.title}`;
 
-  moveTitle.textContent=move.title;
-  description.textContent=move.text;
+  credit.textContent = "Real-practitioner visual reference";
 
-  image.src=move.image;
-  image.alt=`${currentArt} — ${move.title}`;
+  keypoints.innerHTML =
+    move.points.map(point => `<li>${point}</li>`).join("");
 
-  credit.textContent=
-    "Real-practitioner visual reference";
+  watch.href = move.watch;
 
-  keypoints.innerHTML=
-    move.points.map(point=>`<li>${point}</li>`).join("");
+  previous.disabled = currentMove === 0;
+  next.disabled = currentMove === moves.length - 1;
 
-  watch.href=move.watch;
+  previous.style.opacity = currentMove === 0 ? ".4" : "1";
+  next.style.opacity = currentMove === moves.length - 1 ? ".4" : "1";
 
-  previous.disabled=currentMove===0;
-  next.disabled=currentMove===moves.length-1;
+  progress.style.width =
+    `${((currentMove + 1) / moves.length) * 100}%`;
 
-  previous.style.opacity=currentMove===0?".4":"1";
-  next.style.opacity=currentMove===moves.length-1?".4":"1";
-
-  progress.style.width=
-    `${((currentMove+1)/moves.length)*100}%`;
-
-  list.querySelectorAll("button").forEach((button,i)=>{
-    button.classList.toggle("active",i===currentMove);
+  list.querySelectorAll("button").forEach((button, i) => {
+    button.classList.toggle("active", i === currentMove);
   });
-
 }
 
-
-previous.onclick=()=>{
-
-  if(currentMove>0){
+previous.onclick = () => {
+  if (currentMove > 0) {
     currentMove--;
     renderMove();
   }
-
 };
 
-
-next.onclick=()=>{
-
-  if(currentMove<arts[currentArt].moves.length-1){
+next.onclick = () => {
+  if (currentMove < arts[currentArt].moves.length - 1) {
     currentMove++;
     renderMove();
   }
-
 };
-
-
-/* Start with Kung Fu */
 
 loadArt("Kung Fu");
 
-
-/* ═══════════════════════════════════════════════
-   FIVE-MINUTE TIMER
-   ═══════════════════════════════════════════════ */
-
-let seconds=300;
-let running=false;
+let seconds = 300;
+let running = false;
 let interval;
 
-const time=document.querySelector("#time");
-const toggle=document.querySelector("#toggle");
+const time = document.querySelector("#time");
+const toggle = document.querySelector("#toggle");
 
-function renderTime(){
-
-  time.textContent=
-    `${String(Math.floor(seconds/60)).padStart(2,"0")}:`+
-    `${String(seconds%60).padStart(2,"0")}`;
-
+function renderTime() {
+  time.textContent =
+    `${String(Math.floor(seconds / 60)).padStart(2, "0")}:` +
+    `${String(seconds % 60).padStart(2, "0")}`;
 }
 
-toggle.onclick=()=>{
-
-  if(running){
-
+toggle.onclick = () => {
+  if (running) {
     clearInterval(interval);
-    running=false;
-    toggle.textContent="▶";
-
+    running = false;
+    toggle.textContent = "▶";
     return;
   }
 
-  if(seconds<=0)
-    seconds=300;
+  if (seconds <= 0) {
+    seconds = 300;
+  }
 
-  running=true;
-  toggle.textContent="Ⅱ";
+  running = true;
+  toggle.textContent = "Ⅱ";
 
-  interval=setInterval(()=>{
-
+  interval = setInterval(() => {
     seconds--;
     renderTime();
 
-    if(seconds<=0){
-
+    if (seconds <= 0) {
       clearInterval(interval);
-      running=false;
-      toggle.textContent="↻";
-
+      running = false;
+      toggle.textContent = "↻";
     }
-
-  },1000);
-
+  }, 1000);
 };
 
 renderTime();
-
 </script>
 
 </body>
