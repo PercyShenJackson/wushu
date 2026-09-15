@@ -2370,7 +2370,7 @@ const progress =
   document.querySelector("#progress");
 
 
-function loadArt(name) {
+const  loadArt = (name) => {
 
   currentArt = name;
 
@@ -2394,7 +2394,7 @@ function loadArt(name) {
 }
 
 
-function renderMoveButtons() {
+const renderMoveButtons =() =>{
 
   list.innerHTML =
     arts[currentArt].moves
@@ -2432,7 +2432,7 @@ function renderMoveButtons() {
 }
 
 
-function renderMove() {
+const renderMove = ()=> {
 
   const moves =
     arts[currentArt].moves;
@@ -2563,7 +2563,7 @@ const toggle =
   document.querySelector("#toggle");
 
 
-function renderTime() {
+const renderTime = () =>{
 
   time.textContent =
     `${String(
