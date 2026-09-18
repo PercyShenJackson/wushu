@@ -1767,6 +1767,126 @@ const arts = {
           "www.youtube.com",
           "results?search_query=wushu+spear+basic+training"
         )
+      },
+
+
+      {
+        title: "Fan — Basic Grip (Shan)",
+
+        image: url(
+          commons,
+          "wiki/Special:Redirect/file/Wushu.jpg"
+        ),
+
+        text:
+          "Learn to hold the closed fan securely before introducing opening, closing or striking actions.",
+
+        points: [
+          "Thumb and index control the base",
+          "Keep the wrist relaxed",
+          "Know the direction the fan opens"
+        ],
+
+        watch: url(
+          "www.youtube.com",
+          "results?search_query=wushu+fan+basic+grip+tutorial"
+        )
+      },
+
+
+      {
+        title: "Fan — Open and Close",
+
+        image: url(
+          commons,
+          "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_08.jpg"
+        ),
+
+        text:
+          "A signature fan action: snapping the fan open and folding it closed without losing posture or rhythm.",
+
+        points: [
+          "Snap from the wrist, not the elbow",
+          "Keep shoulders down",
+          "Close the fan under control"
+        ],
+
+        watch: url(
+          "www.youtube.com",
+          "results?search_query=wushu+fan+open+close+tutorial"
+        )
+      },
+
+
+      {
+        title: "Fan — Basic Step",
+
+        image: url(
+          commons,
+          "wiki/Special:Redirect/file/Shaolin_Kung_Fu_In_Iran.jpg"
+        ),
+
+        text:
+          "Coordinate footwork with the fan so the weapon moves with the body instead of ahead of it.",
+
+        points: [
+          "Step first, then open",
+          "Keep the fan clear of the face",
+          "Practice slowly at first"
+        ],
+
+        watch: url(
+          "www.youtube.com",
+          "results?search_query=wushu+fan+footwork+tutorial"
+        )
+      },
+
+
+      {
+        title: "Fan — Wrist Circle (Yun Shan)",
+
+        image: url(
+          commons,
+          "wiki/Special:Redirect/file/Shaolin_quan_In_Iran_Qom_city_Mostafa_Meraji_05.jpg"
+        ),
+
+        text:
+          "A continuous circling action that develops wrist mobility, timing and flow between fan techniques.",
+
+        points: [
+          "Circle from the wrist",
+          "Keep the forearm quiet",
+          "Maintain a steady rhythm"
+        ],
+
+        watch: url(
+          "www.youtube.com",
+          "results?search_query=wushu+fan+wrist+circle+training"
+        )
+      },
+
+
+      {
+        title: "Fan — Basic Form Sequence",
+
+        image: url(
+          commons,
+          "wiki/Special:Redirect/file/Wushu_in_Iran_Qom_City_Mustafa_Meraji_10.jpg"
+        ),
+
+        text:
+          "A short beginner sequence joining grip, opening, stepping and circling into one continuous routine.",
+
+        points: [
+          "Learn each section separately",
+          "Join sections only when clean",
+          "Keep breathing natural"
+        ],
+
+        watch: url(
+          "www.youtube.com",
+          "results?search_query=wushu+fan+form+beginner+tutorial"
+        )
       }
 
     ]
@@ -2370,7 +2490,7 @@ const progress =
   document.querySelector("#progress");
 
 
-const  loadArt = (name) => {
+function loadArt(name) {
 
   currentArt = name;
 
@@ -2394,7 +2514,7 @@ const  loadArt = (name) => {
 }
 
 
-const renderMoveButtons =() =>{
+function renderMoveButtons() {
 
   list.innerHTML =
     arts[currentArt].moves
@@ -2432,7 +2552,7 @@ const renderMoveButtons =() =>{
 }
 
 
-const renderMove = ()=> {
+function renderMove() {
 
   const moves =
     arts[currentArt].moves;
@@ -2563,7 +2683,7 @@ const toggle =
   document.querySelector("#toggle");
 
 
-const renderTime = () =>{
+function renderTime() {
 
   time.textContent =
     `${String(
@@ -2632,6 +2752,3 @@ renderTime();
 
 </body>
 </html>
-
-
-
