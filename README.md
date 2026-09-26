@@ -1052,7 +1052,7 @@ The long-term objective is:
 
 Zed and Angelot are separate people within the broader framework and should not be confused with my personal training system.
 
-Zed is a full-time student and part-time CAF Reserve paramedic with professional emergency-response and military training.
+Zed is a full-time student and part-time CAF Reserve paramedic with professional emergency-response and military training. with. a left leg recovery from a dislocation and surgery
 
 Angelot is a full-time student and part-time CAF Reserve infantry member with military field and combat-related training.
 
