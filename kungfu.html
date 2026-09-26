@@ -869,6 +869,16 @@ footer {
       <skill-library scope="foundation"></skill-library>
     </div>
 
+    <div style="margin-top:70px" id="fei-hong-grappling">
+      <div class="label">05 / 飞鸿将军的擒拿手</div>
+      <h3 style="font-size:clamp(28px,4vw,48px);margin:12px 0 10px">飞鸿将军的擒拿手</h3>
+      <p class="muted" style="max-width:780px;margin-bottom:28px">
+        A fictional / wuxia-inspired concept within <strong>安全擒拿</strong>, integrated into the realistic 飞羽玄门 framework.
+        It is not presented as a documented historical martial-arts school or as literal reproducible fictional choreography.
+      </p>
+      <fei-hong-grappling></fei-hong-grappling>
+    </div>
+
   </div>
 
 </section>
@@ -2303,6 +2313,64 @@ class SkillLibrary extends HTMLElement {
   }
 }
 
+class FeiHongGrappling extends HTMLElement {
+  connectedCallback(){
+    this.innerHTML=`
+      <div class="framework-grid">
+        <article class="framework-card">
+          <b>Origin / 来源</b>
+          <h3>禾晏（何晏）</h3>
+          <p>
+            The source document identifies <strong>飞鸿将军的擒拿手</strong> with the fictional martial identity of
+            <strong>禾晏（何晏）</strong>, the protagonist associated with 《锦月如歌》 and its source novel
+            《重生之女将星》. In the drama, the character is presented as 何晏／禾晏 and becomes the
+            “飞鸿将军”.
+          </p>
+          <p>
+            This origin is fictional and wuxia-inspired. The website therefore treats the concept as an
+            inspiration for realistic training principles rather than claiming that the fictional choreography
+            is a historical or directly reproducible fighting system.
+          </p>
+        </article>
+
+        <article class="framework-card">
+          <b>Place in 飞羽玄门</b>
+          <h3>安全擒拿 → 飞羽玄门</h3>
+          <p>
+            飞鸿将军的擒拿手 is a named concept inside <strong>安全擒拿</strong>, not a separate combat category.
+            Its realistic training emphasis is awareness of contact and movement, positioning, balance, timing,
+            controlled movement, safe release, adaptability and self-control.
+          </p>
+          <div class="sequence">飞鸿将军的擒拿手 → 安全擒拿 → 飞羽玄门</div>
+        </article>
+
+        <article class="framework-card">
+          <b>Training progression</b>
+          <h3>知控，而非伤人</h3>
+          <p>
+            The practical progression from the source is: first become aware, then establish position, then
+            control only when appropriate, and disengage when possible.
+          </p>
+          <div class="sequence">先感知 → 再定位 → 后控制 → 能脱离则脱离</div>
+        </article>
+      </div>
+
+      <div class="safety" style="margin-top:30px">
+        <h3>What the concept represents</h3>
+        <p>
+          <strong>以身应变，以步取位，以感知察变，以巧求解，以武德止行。</strong>
+          The emphasis is on position, balance, timing, awareness, efficient movement and judgment — not
+          maximum force, pursuit, revenge or unnecessary confrontation.
+        </p>
+        <div class="pill-row">
+          <span class="pill">位置</span><span class="pill">平衡</span><span class="pill">时机</span>
+          <span class="pill">感知</span><span class="pill">巧</span><span class="pill">武德</span>
+        </div>
+      </div>
+    `;
+  }
+}
+
 class PracticalCases extends HTMLElement {
   connectedCallback(){
     const cases=[
@@ -2323,6 +2391,7 @@ customElements.define('framework-overview',FrameworkOverview);
 customElements.define('development-layers',DevelopmentLayers);
 customElements.define('safety-principles',SafetyPrinciples);
 customElements.define('skill-library',SkillLibrary);
+customElements.define('fei-hong-grappling',FeiHongGrappling);
 customElements.define('practical-cases',PracticalCases);
 customElements.define('weekly-plan',WeeklyPlan);
 
@@ -2509,7 +2578,7 @@ class SiteHeader extends HTMLElement {
 
             <a href="#philosophy">Philosophy</a>
             <a href="#training">Foundation</a>
-            <a href="#cases">Cases</a>
+            <a href="#fei-hong-grappling">飞鸿擒拿</a><a href="#cases">Cases</a>
             <a href="#practice">Practice</a>
 
           </nav>
