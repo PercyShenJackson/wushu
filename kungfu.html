@@ -582,6 +582,46 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   UNIFIED 侠 / 巧 FRAMEWORK — MODERN WEB COMPONENT UI
+========================================================= */
+.framework-section{background:linear-gradient(180deg,#0a0a0a,#111);border-block:1px solid var(--line)}
+.framework-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.framework-card,.skill-card,.week-card,.principle-card{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,var(--panel2),var(--panel))}
+.framework-card b,.skill-card b,.week-card b{color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.framework-card h3,.skill-card h3,.week-card h3{margin:12px 0 8px;font:26px/1 Georgia,serif}
+.framework-card p,.skill-card p,.week-card p,.principle-card p{color:var(--muted);font-size:14px}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid var(--line);border-radius:99px;color:#ddd;background:#111;font-size:12px}
+.skill-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.skill-toolbar input,.skill-toolbar select{flex:1;min-width:220px;margin:0}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.skill-card{position:relative;overflow:hidden}
+.skill-card:after{content:attr(data-symbol);position:absolute;right:14px;top:12px;color:#fff4;font:900 80px/.8 Georgia}
+.skill-card .skill-meta{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+.skill-card .tag{font-size:11px;color:var(--red);border:1px solid #d8443240;padding:4px 8px;border-radius:99px}
+.skill-card ul,.week-card ul{padding-left:18px;margin-top:12px;color:#ccc;font-size:13px}
+.skill-card li,.week-card li{margin:5px 0}
+.layer-map{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:28px}
+.layer{padding:20px 10px;text-align:center;background:var(--panel);border:1px solid var(--line)}
+.layer strong{display:block;font:28px Georgia;color:var(--red)}
+.layer span{display:block;margin-top:8px;font-size:11px;color:#aaa}
+.table-wrap{overflow:auto;margin-top:28px;border:1px solid var(--line);border-radius:var(--radius)}
+.framework-table{width:100%;border-collapse:collapse;min-width:650px}
+.framework-table th,.framework-table td{padding:14px;text-align:left;border-bottom:1px solid var(--line)}
+.framework-table th{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.framework-table td{color:#ccc;font-size:13px}
+.week-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.week-card small{color:var(--red);font-weight:800}
+.safety{margin-top:30px;padding:26px;border:1px solid #d8443250;border-radius:var(--radius);background:#170d0b}
+.safety h3{font:26px Georgia;margin-bottom:10px}
+.safety p{color:#ccc}
+.safety .sequence{margin-top:16px;font-weight:800;line-height:2;color:#f4f1e9}
+@media(max-width:900px){.framework-grid,.skill-grid{grid-template-columns:1fr 1fr}.week-grid{grid-template-columns:1fr 1fr}.layer-map{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:600px){.framework-grid,.skill-grid,.week-grid{grid-template-columns:1fr}.layer-map{grid-template-columns:repeat(2,1fr)}}
+
 </style>
 </head>
 
@@ -761,12 +801,19 @@ footer {
 </section>
 
 
-<section>
+<section id="philosophy">
 
   <div class="container">
 
-    <div class="label">
-      03 / Philosophy
+    <div class="section-head">
+      <div>
+        <div class="label">03 / Philosophy</div>
+        <h2>以巧应变.<br>Move with judgment.</h2>
+      </div>
+      <p>
+        The original Wushu philosophy remains the foundation: see the movement, understand the structure,
+        then make it your own. The Unified 侠 / 巧 Framework adds awareness, adaptability, restraint and responsibility.
+      </p>
     </div>
 
     <div class="quote">
@@ -774,6 +821,10 @@ footer {
       Understand the structure.<br>
       <span>Then make it your own.</span>
     </div>
+
+    <framework-overview></framework-overview>
+    <development-layers></development-layers>
+    <safety-principles></safety-principles>
 
   </div>
 
@@ -808,10 +859,29 @@ footer {
 
     <training-path></training-path>
 
+    <div style="margin-top:70px">
+      <div class="label">05 / Unified skills inside Foundation</div>
+      <h3 style="font-size:clamp(28px,4vw,48px);margin:12px 0 10px">Build the skills behind the movements.</h3>
+      <p class="muted" style="max-width:720px;margin-bottom:28px">
+        The Word-document skills are placed here beside the original foundation curriculum, so the traditional categories
+        and the Unified 侠 / 巧 training system can be learned together.
+      </p>
+      <skill-library scope="foundation"></skill-library>
+    </div>
+
   </div>
 
 </section>
 
+<section id="cases" class="framework-section">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="label">06 / Practical cases</div><h2>Apply the<br>principles.</h2></div>
+      <p>Source-derived situations are presented as judgment and safety exercises—not as invitations to use martial arts in real-life confrontations.</p>
+    </div>
+    <practical-cases></practical-cases>
+  </div>
+</section>
 
 <section
   class="practice"
@@ -823,7 +893,7 @@ footer {
     <div>
 
       <div class="label">
-        05 / Daily practice
+        08 / Daily practice
       </div>
 
       <h2>
@@ -843,6 +913,13 @@ footer {
     </div>
 
 
+    <div style="grid-column:1 / -1;margin-bottom:38px">
+      <div class="label">07 / Weekly development</div>
+      <h3 style="font-size:clamp(28px,4vw,48px);margin:12px 0 10px">Train. Recover. Integrate.</h3>
+      <p class="muted" style="max-width:720px;margin-bottom:28px">The weekly plan keeps the original five-minute practice tool while adding the source framework's full weekly structure.</p>
+      <weekly-plan></weekly-plan>
+    </div>
+
     <div class="practice-card">
 
       <label class="muted">
@@ -851,17 +928,19 @@ footer {
 
       <select id="focus">
 
-        <option>Horse stance</option>
-        <option>Qigong</option>
-        <option>Neigong</option>
-        <option>Waigong</option>
-        <option>Qinggong</option>
-        <option>Ruangong</option>
-        <option>Yinggong</option>
-        <option>Forms</option>
-        <option>Weapons</option>
-        <option>Feiyanzhoubi</option>
-        <option>Gaolaigaoqiludifeitengfa</option>
+        <option>身功</option>
+        <option>气功</option>
+        <option>步法</option>
+        <option>轻功</option>
+        <option>感知</option>
+        <option>飞羽玄扇功</option>
+        <option>飞羽十三式</option>
+        <option>安全擒拿</option>
+        <option>鹰爪力</option>
+        <option>铁爪功</option>
+        <option>巧</option>
+        <option>武德</option>
+        <option>Integrated 巧</option>
 
       </select>
 
@@ -2175,6 +2254,78 @@ const arts = {
 };
 
 
+
+/* =========================================================
+   UNIFIED 侠 / 巧 DATA + COMPONENTS
+========================================================= */
+const frameworkSkills = [
+  {name:'气功',symbol:'气',category:'Mind / Breath',purpose:'Realistic breathing and regulation: relaxation, concentration, body awareness, calmness and controlled breathing.',learn:['Natural controlled breathing','Relaxation and concentration','Body awareness'],progress:'Light → steady → controlled'},
+  {name:'身功',symbol:'身',category:'Body',purpose:'Posture, balance, coordination, weight shifting, alignment, mobility and controlled transitions.',learn:['Alignment','Balance and weight transfer','Efficient whole-body movement'],progress:'Quality before speed'},
+  {name:'步法',symbol:'步',category:'Positioning',purpose:'Stable stepping, direction changes, weight transfer, positioning, distance awareness and controlled movement.',learn:['Forward / retreat / side steps','Direction changes','Position and distance'],progress:'Stable → mobile → adaptive'},
+  {name:'轻功',symbol:'轻',category:'Movement',purpose:'A realistic movement category for balance, agility, footwork, body control, landing control and spatial awareness.',learn:['Balance and agility','Controlled landings','Spatial awareness'],progress:'No literal supernatural feats'},
+  {name:'飞羽玄扇功',symbol:'扇',category:'Fan / Coordination',purpose:'Use fan training to develop coordination, rhythm, timing, hand-eye coordination, footwork, posture and controlled transitions.',learn:['Rhythm and timing','Footwork + posture','飞羽十三式'],progress:'Slow → precise → coordinated'},
+  {name:'安全擒拿',symbol:'控',category:'Control / Grappling',purpose:'Safety-focused grappling and control: positioning, balance, sensitivity, escape, release, partner communication and responsible control.',learn:['Contact awareness','Position and balance','Safe escape / release'],progress:'先感知 → 再定位 → 后控制 → 能脱离则脱离'},
+  {name:'感知',symbol:'察',category:'Awareness',purpose:'Environmental awareness: people, movement, exits, traffic, obstacles, sounds, hazards, changes and emergencies.',learn:['Visual scanning','Listening for changes','Recognize exits / hazards'],progress:'Observe → calm → judge'},
+  {name:'巧',symbol:'巧',category:'Adaptability',purpose:'Precision, timing, efficiency, positioning, awareness, adaptability, creativity, controlled movement, judgment and self-control.',learn:['Choose appropriate tools','Adapt to change','Avoid unnecessary action'],progress:'以巧应变'},
+  {name:'武德',symbol:'德',category:'Ethics / Restraint',purpose:'Respect, restraint, responsibility, humility, discipline, lawful conduct and knowing when not to act or when to stop.',learn:['Self-control','Avoid unnecessary confrontation','Stop when danger ends'],progress:'能避则避 → 能止则止'},
+  {name:'飞鸿将军的擒拿手',symbol:'鸿',category:'Inspiration',purpose:'A fictional/wuxia-inspired concept placed inside 安全擒拿; used here as an expression of awareness, positioning, timing, balance and controlled movement.',learn:['Understand its fictional origin','Study control principles safely','Disengage when possible'],progress:'知控, not injury'},
+  {name:'鹰爪力',symbol:'鹰',category:'Hand Strength',purpose:'Grip and hand-strength development focused on finger strength, grip, wrist stability, forearms, coordination and fine motor control.',learn:['Grip strength','Finger coordination','Wrist / forearm stability'],progress:'轻 → 稳 → 强 → 巧'},
+  {name:'铁爪功',symbol:'铁',category:'Conditioning',purpose:'Progressive hand and forearm conditioning with controlled resistance, gradual progression and recovery.',learn:['Grip conditioning','Forearm and wrist work','Recovery'],progress:'硬功不是伤功'},
+  {name:'飞羽十三式',symbol:'十',category:'Sequence',purpose:'Named sequence within 飞羽玄扇功; the fan system develops coordination, timing, rhythm, footwork and spatial awareness.',learn:['Learn sections progressively','Connect transitions','Express 巧 through coordinated movement'],progress:'Section → sequence → refinement'}
+];
+
+const frameworkOverview = [
+ ['气功','Regulate','Breathing, calmness and concentration'],
+ ['身功','Build','Posture, balance and whole-body control'],
+ ['步法','Position','Stepping, distance and movement'],
+ ['轻功','Move','Agility, landing and spatial awareness'],
+ ['扇法','Coordinate','Rhythm, timing and hand-eye coordination'],
+ ['安全擒拿','Control','Positioning, sensitivity, escape and release'],
+ ['感知','Observe','Environmental awareness and change detection'],
+ ['巧','Adapt','Efficient judgment and appropriate response'],
+ ['武德','Stop','Restraint, responsibility and self-control']
+];
+
+class FrameworkOverview extends HTMLElement { connectedCallback(){ this.innerHTML=`<div class="framework-grid">${frameworkOverview.map((x,i)=>`<article class="framework-card"><b>${String(i+1).padStart(2,'0')} · ${x[1]}</b><h3>${x[0]}</h3><p>${x[2]}</p></article>`).join('')}</div>`; } }
+
+class DevelopmentLayers extends HTMLElement { connectedCallback(){ this.innerHTML=`<div style="margin-top:70px"><div class="label">Seven-layer development</div><div class="layer-map">${[['心','Mind / judgment'],['气','Breath / regulation'],['身','Body / structure'],['步','Movement / position'],['感知','Awareness'],['巧','Adaptability'],['武德','Ethics / restraint']].map(x=>`<div class="layer"><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}</div><p class="muted" style="margin-top:18px">心 → 气 → 身 → 步 → 感知 → 巧 → 武德</p></div>`; } }
+
+class SafetyPrinciples extends HTMLElement { connectedCallback(){ this.innerHTML=`<div class="safety"><h3>Safety, ethics & realistic boundaries</h3><p>The source framework emphasizes that training is not a license to confront, pursue, punish or use unnecessary force. Martial arts do not replace professional emergency procedures, legal advice or qualified instruction.</p><div class="sequence">观察 → 冷静 → 避险 → 求助 → 安全保护 → 适当应对 → 停止</div><div class="pill-row"><span class="pill">训练可以；滥用不可</span><span class="pill">能避则避</span><span class="pill">危险停止，行动即止</span><span class="pill">长期发展，而不是短期透支</span></div></div>`; } }
+
+class SkillLibrary extends HTMLElement {
+  connectedCallback(){
+    const scope=this.getAttribute('scope')||'all';
+    const foundationNames=['气功','身功','步法','轻功','飞羽玄扇功','飞羽十三式','安全擒拿','鹰爪力','铁爪功','感知'];
+    const source=scope==='foundation'?frameworkSkills.filter(s=>foundationNames.includes(s.name)):frameworkSkills;
+    this.innerHTML=`<div class="skill-toolbar"><input id="skillSearch" type="search" placeholder="Search skills, concepts, or training..." aria-label="Search skills"><select id="skillFilter"><option value="all">All categories</option>${[...new Set(source.map(s=>s.category))].map(c=>`<option>${c}</option>`).join('')}</select></div><div class="skill-grid" id="skillGrid"></div>`;
+    const render=()=>{const q=this.querySelector('#skillSearch').value.toLowerCase();const f=this.querySelector('#skillFilter').value;const list=source.filter(s=>(f==='all'||s.category===f)&&`${s.name} ${s.category} ${s.purpose} ${s.learn.join(' ')}`.toLowerCase().includes(q));this.querySelector('#skillGrid').innerHTML=list.map(s=>`<article class="skill-card" data-symbol="${s.symbol}"><b>${s.category}</b><h3>${s.name}</h3><div class="skill-meta"><span class="tag">Learn</span><span class="tag">${s.progress}</span></div><p>${s.purpose}</p><ul>${s.learn.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('')||'<p class="muted">No matching skill.</p>';};
+    this.querySelector('#skillSearch').addEventListener('input',render); this.querySelector('#skillFilter').addEventListener('change',render); render();
+  }
+}
+
+class PracticalCases extends HTMLElement {
+  connectedCallback(){
+    const cases=[
+      ['Thief / property situation','A person is attempting to steal property. The framework asks first: how can the situation be resolved with the least unnecessary danger?','保持安全距离；使用报警或其他非接触方式；联系适当的 authorities；不要把财物自动等同于值得身体对抗。','能避则避 → 求助 → 安全保护 → 停止'],
+      ['Immediate safety threat','If a situation changes from property loss to an immediate threat to a person, the priority changes toward personal safety and appropriate protection.','先观察和避险；创造距离；求助；只有在确有必要且适当时才考虑安全保护；危险结束后停止。','观察 → 冷静 → 判断 → 避险 → 求助 → 适当应对 → 停止'],
+      ['School emergency','Martial-arts skills do not replace school emergency procedures.','Follow the school\'s evacuation, shelter, lockdown, or other emergency instructions as applicable.','观察 → 冷静 → 避险 → 求助 → 遵循学校应急程序 → 停止'],
+      ['Home emergency','Different home emergencies require different responses; one technique cannot solve every emergency.','Assess the situation, avoid hazards, seek help, protect safely when appropriate, and follow professional instructions.','观察 → 冷静 → 判断 → 避险 → 求助 → 安全保护 → 停止'],
+      ['Protecting another person','Helping someone does not automatically require physical intervention.','Call for help, create distance, help the person leave, warn others, follow procedures, and provide safe assistance.','观察 → 判断 → 避险 → 求助 → 安全保护 → 停止'],
+      ['Personal vs. property safety','The framework distinguishes protecting a person from protecting property.','Personal safety remains central; property protection is a separate legal and practical issue.','保护人 ≠ 保护财物']
+    ];
+    this.innerHTML=`<div class="skill-grid">${cases.map(c=>`<article class="skill-card"><b>CASE</b><h3>${c[0]}</h3><p>${c[1]}</p><ul><li>${c[2]}</li></ul><div class="sequence" style="font-size:15px;margin-top:18px">${c[3]}</div></article>`).join('')}</div><div class="safety" style="margin-top:30px"><h3>Boundaries</h3><p>The source framework states that different emergencies require different responses; a martial-arts skill is not a universal solution. It also emphasizes that training does not replace police, paramedic, firefighter, school procedures, first aid, professional use-of-force training, legal advice, emergency dispatch or other professional systems.</p></div>`;
+  }
+}
+
+class WeeklyPlan extends HTMLElement { connectedCallback(){const days=[['MON','身功 + 气功','60–70 min',['Posture','Mobility','Balance','Breathing / relaxation','Concentration']],['TUE','步法 + 轻功 + 感知','60–70 min',['Stepping','Direction changes','Agility','Spatial awareness','Environmental awareness']],['WED','Recovery + Mobility','40–60 min',['Recovery','Gentle mobility','Stretching','Breathing','Light movement']],['THU','扇法 + 飞羽玄扇功 + 飞羽十三式','65–75 min',['Coordination','Rhythm','Timing','Footwork','Controlled transitions']],['FRI','安全擒拿 + 鹰爪力 + 铁爪功','60–70 min',['Positioning','Balance / sensitivity','Safe partner work','Grip conditioning','Escape / release']],['SAT','Integrated 巧','~75 min',['身 + 步 + 感知','扇法','安全擒拿','Choose the appropriate tool','Do not maximize everything']],['SUN','Full Recovery','Rest',['Rest','Recover','Prepare for next week']]];this.innerHTML=`<div class="week-grid">${days.map(d=>`<article class="week-card"><small>${d[0]}</small><h3>${d[1]}</h3><p>${d[2]}</p><ul>${d[3].map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('')}</div><div class="pill-row"><span class="pill">训练日 ≠ 每天最大强度</span><span class="pill">技术日重质量</span><span class="pill">力量日重控制</span><span class="pill">恢复日真恢复</span><span class="pill">轻 → 稳 → 强 → 巧</span></div>`; } }
+
+customElements.define('framework-overview',FrameworkOverview);
+customElements.define('development-layers',DevelopmentLayers);
+customElements.define('safety-principles',SafetyPrinciples);
+customElements.define('skill-library',SkillLibrary);
+customElements.define('practical-cases',PracticalCases);
+customElements.define('weekly-plan',WeeklyPlan);
+
 /* =========================================
    MARTIAL ARTS COMPONENT
 ========================================= */
@@ -2356,9 +2507,10 @@ class SiteHeader extends HTMLElement {
               Training
             </a>
 
-            <a href="#practice">
-              Practice
-            </a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#training">Foundation</a>
+            <a href="#cases">Cases</a>
+            <a href="#practice">Practice</a>
 
           </nav>
 
@@ -2751,8 +2903,4 @@ renderTime();
 </script>
 
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 53d8b57 (sk)
